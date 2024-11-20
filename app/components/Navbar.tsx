@@ -1,29 +1,41 @@
-import React from 'react';
-import Link from 'next/link';
+'use client';
 
-const Navbar = () => {
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import SignInButton from './SignInButton';
+import SignOutButton from './SignOutButton';
+
+export default function Navbar() {
+  const [Token1, setToken] = useState(false); 
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setToken(!!token); 
+  }, []); 
+
+
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link href="/">Home</Link>
-        </li>
-        <li>
-          <Link href="/products">Products</Link>
-        </li>
-        <li>
-          <Link href="/blog">Blog</Link>
-        </li>
-        <li>
-          <Link href="/signin">Sign In</Link>
-        </li>
-        <li>
-          <Link href="/signup">Sign Up</Link>
-        </li>
-        {/* Add SignInButton, SignOutButton etc. */}
-      </ul>
+    <nav className="flex justify-between items-center p-4 bg-gray-800 text-white shadow-md">
+      {/* Logo or Title */}
+      <div className="text-lg font-bold">
+        <Link href="/" className="hover:text-gray-300">Yoga Products</Link>
+      </div>
+
+      {/* Navigation Links */}
+      <div className="space-x-6">
+        <Link href="/" className="hover:text-gray-300">Home</Link>
+        <Link href="/products" className="hover:text-gray-300">Products</Link>
+        <Link href="/blog" className="hover:text-gray-300">Blogs</Link>
+      </div>
+
+      {/* Authentication Button */}
+      <div>
+        {Token1 ? (
+          <SignOutButton />
+        ) : (
+          <SignInButton  />
+        )}
+      </div>
     </nav>
   );
-};
-
-export default Navbar;
+}
