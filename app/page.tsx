@@ -1,9 +1,14 @@
-import Image from "next/image";
+import React from 'react';
+import Navbar from './components/Navbar';
 
-export default function Home() {
+const HomePage = () => {
   return (
     <div>
-      he
+      <Navbar />
+      <h1>Welcome to the Smart Yoga Store</h1>
+      {/* Add homepage content here */}
     </div>
   );
-}
+};
+
+export default HomePage;
