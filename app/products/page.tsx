@@ -41,7 +41,7 @@ export default function ProductPage() {
 
   return (
     <div className="min-h-screen p-8 bg-white">
-      <h1 className="text-3xl font-bold mb-6 text-center">Products</h1>
+      <h1 className="text-4xl font-bold mb-6 text-center text-teal-800 font-serif">Products</h1>
 
       <div className="space-y-6">
         {products.length === 0 ? (
@@ -49,14 +49,16 @@ export default function ProductPage() {
         ) : (
           products.map((product) => (
             <div key={product._id} className="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-              <h2 className="text-2xl font-semibold text-blue-600 hover:text-blue-800 transition duration-200">
+              <h2 className="text-2xl font-semibold text-blue-600 font-serif hover:text-blue-800 transition duration-200">
                 {product.name}
               </h2>
               <p className="text-sm text-gray-500">Price: ${product.price}</p>
-              <p className="mt-4 text-gray-700">{product.description}</p>
+              <p className="mt-4 text-gray-700 mb-4">{product.description}</p>
+              <button className='bg-black text-emerald-100 rounded-lg text-center shadow-xl hover:text-gray-300 w-32 p-3 focus:outline-none'>Buy product</button>
             </div>
           ))
         )}
+
       </div>
     </div>
   );

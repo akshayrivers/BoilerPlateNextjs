@@ -18,14 +18,14 @@ export default function Navbar() {
     <nav className="flex justify-between items-center p-4 bg-gray-800 text-white shadow-md">
       {/* Logo or Title */}
       <div className="text-lg font-bold">
-        <Link href="/" className="hover:text-gray-300">Yoga Products</Link>
+        <Link href="/" className="hover:text-gray-300 font-serif">Smart Yoga</Link>
       </div>
 
       {/* Navigation Links */}
       <div className="space-x-6">
-        <Link href="/" className="hover:text-gray-300">Home</Link>
-        <Link href="/products" className="hover:text-gray-300">Products</Link>
-        <Link href="/blog" className="hover:text-gray-300">Blogs</Link>
+        <Link href="/" className="hover:text-gray-300 font-serif">Home</Link>
+        <Link href="/products" className="hover:text-gray-300 font-serif">Products</Link>
+        <Link href="/blog" className="hover:text-gray-300 font-serif">Blogs</Link>
       </div>
 
       {/* Authentication Button */}

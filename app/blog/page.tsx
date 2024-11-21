@@ -43,7 +43,7 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen p-8 bg-white">
-      <h1 className="text-3xl font-bold mb-6 text-center">Blog</h1>
+      <h1 className="text-4xl font-bold mb-6 text-center text-teal-800 bg-inherit font-serif">Blog</h1>
 
       <div className="space-y-6">
         {blogPosts.length === 0 ? (
@@ -51,11 +51,12 @@ export default function BlogPage() {
         ) : (
           blogPosts.map((post) => (
             <div key={post._id} className="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-              <h2 className="text-2xl font-semibold text-blue-600 hover:text-blue-800 transition duration-200">
+              <h2 className="text-2xl font-semibold text-blue-600 font-serif hover:text-blue-800 transition duration-200">
                 <Link href={`/blog/${post._id}`}>{post.title}</Link>
               </h2>
               <p className="text-sm text-gray-500">By {post.author} | {new Date(post.createdAt).toLocaleDateString()}</p>
-              <p className="mt-4 text-gray-700 line-clamp-3">{post.content}</p>
+              <p className="mt-4 text-gray-700 line-clamp-3 mb-4">{post.content}</p>
+              <button className='bg-black text-emerald-100 rounded-lg text-center shadow-xl hover:text-gray-300 w-32 p-3 focus:outline-none'>Read More</button>
             </div>
           ))
         )}
