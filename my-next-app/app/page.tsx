@@ -48,8 +48,10 @@ export default function Home() {
         <ModeToggle></ModeToggle></div>
       <h1 className="text-5xl font-mono text-center underline">Features</h1>
       <div className="text-center font-mono">
-      <li>working boilerplate backend</li>
-      <li>working boilerplate frontend</li>
+      <li>Next auth</li>
+      <li>AI Integration</li>
+      <li>Resend email OTP verification</li>
+      <li>Landing page</li>
       </div>
 
       <div className="pt-12">
