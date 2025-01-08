@@ -109,42 +109,30 @@ const page = () => {
                   </FormItem>
                 )}
               />
-               <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                    <Input className="text-black"placeholder="email" {...field} 
-                    onChange={(e)=>{
-                      field.onChange(e)
-                      setUsername(e.target.value)
-                    }}
-                    />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-               <FormField
-                control={form.control}
-                name="password"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>password</FormLabel>
-                    <FormControl>
-                    <Input className="text-black"type="password" placeholder="password" {...field} 
-                    onChange={(e)=>{
-                      field.onChange(e)
-                      setUsername(e.target.value)
-                    }}
-                    />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+            <FormField
+              name="email"
+              control={form.control}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <Input {...field} name="email" />
+                  <p className='text-muted text-slate-800 text-sm'>We will send you a verification code</p>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              name="password"
+              control={form.control}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Password</FormLabel>
+                  <Input type="password" {...field} name="password" />
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
               <Button type="submit" disabled={isSubmitting} >
                 {
                   isSubmitting ? (

@@ -7,7 +7,7 @@ import UserModel from "@/model/User";
 
 export async function POST(req: Request, res: Response) {
   await dbConnect();
-  try {
+  try { 
     const {username, email, password } = await req.json();
     const existingUserVerifiedByUsername=await UserModel.findOne({
         username,
