@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <div >
       <h1 className="text-6xl text-center font-mono pt-20 pb-10 underline" > Main Content contained here: </h1>
-      <div className=" flex justify-normal pl-40 ">
+      <div className =" flex justify-normal pl-40 ">
         <div className="text-balance pt-2 pr-2 font-semibold">CHANGE THEME :</div>
         <ModeToggle></ModeToggle></div>
       <h1 className="text-5xl font-mono text-center underline">Features</h1>
