@@ -32,15 +32,15 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AuthProvider>
-          {/* <ThemeProvider
+          <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-          > */}
+          >
             <Navbar />
             {children}
-          {/* </ThemeProvider> */}
+          </ThemeProvider>
         </AuthProvider>
         <Toaster />
       </body>

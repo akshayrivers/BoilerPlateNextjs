@@ -14,7 +14,10 @@ const Navbar =()=>{
     return (
         <nav className='p-4 md:p-6 shadow-md'>
             <div className='container mx-auto flex flex-col md:flex-row justify-between items-center'>
-                <a className='text-xl font-bold mb-4 md:mb-0'href='/'>Mystery</a>
+                <a className='text-xl font-bold mb-4 md:mb-0'href='/'>Home</a>
+                <div><Link href='dashboard'>
+                            <Button className='w-full md:w-auto font-bold'>Dashboard</Button>
+                        </Link></div>
                 {
                     session?(
                         <><span className='mr-4'>Welcome,{user.username || user.email}</span>

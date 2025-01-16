@@ -10,6 +10,7 @@ export async function GET(request:Request){
     await dbConnect();
     const session = await getServerSession(authOptions);
     const user : User= session?.user as User;
+    console.log(user);
 
     if(!session||!session.user){
         return Response.json({
@@ -23,7 +24,7 @@ export async function GET(request:Request){
     try {
         //aggreation pipleine in mongo db
         const user = await UserModel.aggregate([
-            { $match: { id: userId } },
+            { $match: { _id: userId } },
             {$unwind: "$messages"},
             {$sort:{'messages.createdAt':-1}},
             {$group:{_id:"$_id",messages:{$push:"$messages"}}}
