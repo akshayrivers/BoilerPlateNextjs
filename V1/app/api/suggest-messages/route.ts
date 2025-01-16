@@ -10,7 +10,7 @@ export async function POST(req: Request) {
   
     try {
         const { text } = await generateText({
-            model: google('gemini-1.5-flash'), // Use Gemini model identifier
+            model: google('gemini-1.5-flash'), 
             prompt: "Create a list of three open-ended and engaging questions formatted as a single string which are suitable for a conversation with a friend.",
         });
 

@@ -15,7 +15,7 @@ const VerifyAccount =()=>{
     const router = useRouter()
     const param = useParams<{username: string}>()
     const {toast} = useToast()
-    const form = useForm({
+    const form = useForm<z.infer<typeof verifySchema>>({
         resolver: zodResolver(verifySchema),
     });
     const onSubmit = async (data:z.infer<typeof verifySchema>)=>{
