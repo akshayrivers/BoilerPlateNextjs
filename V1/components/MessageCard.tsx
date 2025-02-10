@@ -2,7 +2,6 @@
 import {
     Card,
     CardContent,
-    CardDescription,
     CardFooter,
     CardHeader,
     CardTitle,
@@ -61,7 +60,6 @@ const MessageCard=( {message,onMessageDelete}:MessageCardProps)=>{
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
-    <CardDescription>Card Description</CardDescription>
   </CardHeader>
   <CardContent>
   </CardContent>
